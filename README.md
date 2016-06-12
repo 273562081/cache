@@ -19,17 +19,17 @@ import (
 
 func main() {
     // Create a redis pool.
-	pool := rediscache.NewRedisPool(100, 300, "tcp", ":6379", "", "")
+	pool := cache.NewRedisPool(100, 300, "tcp", ":6379", "", "")
 	defer pool.Close()
 
     // Create RedisCache
-	cache := rediscache.NewRedisCache(pool)
+	rc := cache.NewRedisCache(pool)
 
     var reply interface{}
     var err error
 
     // Get connection.
-    conn := cache.GetConn()
+    conn := rc.GetConn()
     defer conn.Close()
     
 	reply, err = conn.Execute("SET", "name", "RedisCache")
