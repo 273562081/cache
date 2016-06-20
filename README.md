@@ -1,6 +1,8 @@
 # RedisCache
 RedisCache is redis command package for Go.
 
+[![Build Status](https://travis-ci.org/clevergo/cache.svg?branch=master)](https://travis-ci.org/clevergo/cache)
+
 
 # Documentation
 ## Installation
